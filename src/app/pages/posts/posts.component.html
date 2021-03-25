@@ -1,0 +1,23 @@
+<div class="container">
+  <form #postForm="ngForm" (ngSubmit)="addPost(postForm)">
+    <b>Title: </b><input type="text" name="title" ngModel><br>
+    <b>Text: </b><input type="text" name="body" ngModel><br>
+    <input type="submit" value="Add post">
+  </form>
+
+  <h2>Posts: </h2>
+  <div class="post" *ngFor="let post of posts">
+    <b>{{ post.title }}</b><br>
+    {{ post.body }}<br>
+    <b>User id: </b>{{ post.userId }}<br>
+    <b>Post id: </b>{{ post.id }}<br>
+    <button (click)="displayUpdateForm(post)">Update</button>
+    <button (click)="deletePost(post)">Delete</button>
+
+    <form #updateForm="ngForm" (ngSubmit)="updatePost(updateForm, post)" class="updateform" id="updateform{{post.id}}">
+      <b>Title: </b><input type="text" name="title" ngModel><br>
+      <b>Text: </b><input type="text" name="body" ngModel><br>
+      <input type="submit" value="Update post">
+    </form>
+  </div>
+</div>

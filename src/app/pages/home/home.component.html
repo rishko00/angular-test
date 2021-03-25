@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="posts">
+    <h2>Top posts:</h2>
+    <div class="post" *ngFor="let post of posts | slice:0:10">
+      <b>{{ post.title }}</b><br>
+      {{ post.body }}<br>
+      <b>User id: </b>{{ post.userId }}<br>
+      <b>Post id: </b>{{ post.id }}
+    </div>
+  </div>
+
+  <div class="photos">
+    <h2>Top photos:</h2>
+    <div class="photo" *ngFor="let photo of photos | slice:0:10">
+      <img src="{{ photo.thumbnailUrl }}" title="Click for see full size image" (click)="showFullSizeImage(photo)"><br>
+      <b>{{ photo.title }}</b><br>
+      <b>Album Id: </b>{{ photo.albumId }}<br>
+      <b>Id: </b>{{ photo.id }}<br>
+    </div>
+  </div>
+</div>

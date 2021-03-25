@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="photo" *ngFor="let photo of photos">
+    <img src="{{ photo.thumbnailUrl }}" title="Click for see full size image" (click)="showFullSizeImage(photo)"><br>
+    <b>{{ photo.title }}</b><br>
+    <b>Album Id: </b>{{ photo.albumId }}<br>
+    <b>Id: </b>{{ photo.id }}<br>
+  </div>
+</div>
